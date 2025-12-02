@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Game of Thrones Wiki</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .custom-navbar {
+            background: #0f1a2b;
+        }
+
+        .custom-navbar .nav-link {
+            color: #d1cfc9;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 0 1.5rem;
+        }
+
+        .custom-navbar .nav-link:hover {
+            color: #e6e6e6;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #header {
+            width: 100%;
+            height: 240px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #header>a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 24px;
+        }
+
+        #main {
+            width: 100%;
+            height: 900px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .invisbleSideDiv {
+            width: 15%;
+            height: 100%;
+            background-color: #52677d;
+        }
+
+        #centerDiv {
+            width: 70%;
+            height: 100%;
+            background-color: gray;
+        }
+
+        #centerDiv>div {
+            width: 100%;
+            height: 100%;
+            background-color: #bdc4d4;
+            border-width: 6px;
+            border-color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project {
+            width: 100%;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .populartext .textcategory h2 {
+            margin-bottom: 40px;
+        }
+
+        .popular {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .projectitem {
+            position: relative;
+            width: 120px;
+            height: 150px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .projectitem img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .projectitem:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar custom-navbar">
+        <div class="container-fluid">
+            <ul class="navbar-nav flex-row mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="gameofthrones.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Characters.html">Characters</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Houses.html">Houses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Books.html">Books</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div id="main">
+        <div class="invisbleSideDiv"></div>
+        <div id="centerDiv">
+            <div class="project">
+                <div class="populartext">
+                    <div class="textcategory">
+                        <h2><b>Characters</b></h2>
+                    </div>
+                </div>
+                <div class="popular">
+
+                    <div class="projectitem">
+                        <img src="Images/Daenerys.jpg" alt="Project 1">
+                    </div>
+
+                    <div class="projectitem">
+                        <img src="Images/Cersei Lannister.jpg" alt="Project 2">
+                    </div>
+
+                    <div class="projectitem">
+                        <img src="Images/Arya Stark.jpg" alt="Project 3">
+                    </div>
+
+                    <div class="projectitem">
+                        <a href="character.html"><img src="Images/JonSnow.jpg" alt="Project 4"></a>
+                    </div>
+
+                    <div class="projectitem">
+                        <img src="Images/Joffrey Baratheon.jpg" alt="Project 5">
+                    </div>
+
+                    <div class="projectitem">
+                        <img src="Images/Khal Drogo.jpg" alt="Project 6">
+                    </div>
+
+                    <div class="projectitem">
+                        <img src="Images/Margaery Tyrell.jpg" alt="Project 7">
+                    </div>
+
+                    <div class="projectitem">
+                        <img src="Images/Melisandre.jpg" alt="Project 8">
+                    </div>
+
+                    <div class="projectitem">
+                        <img src="Images/Ned Stark.jpg" alt="Project 9">
+                    </div>
+
+                    <div class="projectitem">
+                        <img src="Images/Petyr Baelish.jpg" alt="Project 10">
+                    </div>
+
+                    <div class="projectitem">
+                        <img src="Images/Ramsay Bolton.jpg" alt="Project 11">
+                    </div>
+
+                    <div class="projectitem">
+                        <img src="Images/Robb Stark.jpg" alt="Project 12">
+                    </div>
+
+                    <div class="projectitem">
+                        <img src="Images/Sandor Clegane.jpg" alt="Project 13">
+                    </div>
+
+                    <div class="projectitem">
+                        <img src="Images/Sansa Stark.jpg" alt="Project 14">
+                    </div>
+
+                    <div class="projectitem">
+                        <img src="Images/Theon Greyjoy.jpg" alt="Project 15">
+                    </div>
+
+                    <div class="projectitem">
+                        <img src="Images/Tyrion Lannister.jpg" alt="Project 16">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="invisbleSideDiv"></div>
+    </div>
+
+    <section id="home"></section>
+    <section id="characters"></section>
+    <section id="houses"></section>
+    <section id="books"></section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

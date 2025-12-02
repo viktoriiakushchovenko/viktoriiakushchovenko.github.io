@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Game of Thrones Wiki</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .custom-navbar {
+            background: #0f1a2b;
+        }
+
+        .custom-navbar .nav-link {
+            color: #d1cfc9;
+            font-weight: 600;
+            font-size: 17px;
+            margin: 0 24px;
+        }
+
+        .custom-navbar .nav-link:hover {
+            color: #e6e6e6;
+        }
+
+        #carousel {
+            display: flex;
+            align-items: center;
+            width: 1200px;
+            height: 920px;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #header {
+            width: 100%;
+            height: 240px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #header>a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 24px;
+        }
+
+        #main {
+            width: 100%;
+            height: 2000px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .invisbleSideDiv {
+            width: 15%;
+            height: 100%;
+            background-color: #52677d;
+        }
+
+        #centerDiv {
+            width: 70%;
+            height: 100%;
+            background-color: #bdc4d4;
+        }
+
+        #centerDiv>div {
+            width: 100%;
+            height: 25%;
+            background-color: #bdc4d4;
+            border-width: 6px;
+            border-color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .category {
+            width: 100%;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .textcategory h2 {
+            margin-bottom: 30px;
+        }
+
+        .category-blocks {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .categoryitem {
+            position: relative;
+            height: 400px;
+            width: 250px;
+            border-radius: 15px;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .categoryitem:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+        }
+
+        .categoryitem img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 5px 0;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .name {
+            width: 100%;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .text-align {
+            text-align: center;
+            color: #0f1a2b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar custom-navbar">
+        <div class="container-fluid">
+            <ul class="navbar-nav flex-row mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="gameofthrones.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Characters.html">Characters</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Houses.html">Houses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Books.html">Books</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div id="main">
+        <div class="invisbleSideDiv"></div>
+        <div id="centerDiv">
+            <div>
+                <div class="category">
+                    <div class="textcategory">
+                        <h2><b>Category</b></h2>
+                    </div>
+
+                    <div class="category-blocks">
+                        <div class="categoryitem">
+                            <a href="Characters.html"><img src="Images/Daenerys.jpg" alt="Characters"></a>
+                            <div class="caption"><b>Characters</b></div>
+                        </div>
+                        <div class="categoryitem">
+                            <a href ="house.html"><img src ="Images/house.jpg" alt="Houses"></a>
+                            <div class="caption"><b>Houses</b></div>
+                        </div>
+                        <div class="categoryitem">
+                            <img src="Images/book cover.jpg" alt="Books">
+                            <div class="caption"><b>Books</b></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="text">
+                    <div class="name">
+                        <h2><b>Games of Thrones</b></h2>
+                    </div>
+                    <div class="text-align"><span>Game of Thrones is a fantasy drama about several noble families in the
+                            fictional land of Westeros who vie for control of the Iron Throne, while an ancient
+                            supernatural threat, the White Walkers, emerges in the North.</span>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <div>
+                    <div id="carousel" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="Images/pic3.jpg" class="d-block w-100" alt="Image">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="Images/pic1.jpg" class="d-block w-100" alt="Image">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="Images/pic4.jpg" class="d-block w-100" alt="Image">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="invisbleSideDiv"></div>
+    </div>
+
+
+    <section id="home"></section>
+    <section id="characters"></section>
+    <section id="houses"></section>
+    <section id="books"></section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>REST API GET Example</title>
+</head>
+<body>
+  <button id="loadBtn">Load Data</button>
+  <pre id="output"></pre>
+
+  <script>
+    const API_URL = 'https://jsonplaceholder.typicode.com/posts/1';
+    const output = document.getElementById('output');
+    const loadBtn = document.getElementById('loadBtn');
+
+    async function getData() {
+      try {
+        const response = await fetch(API_URL, {
+          method: 'GET',
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        output.textContent = JSON.stringify(data, null, 2);
+      } catch (error) {
+        output.textContent = 'Error: ' + error.message;
+      }
+    }
+
+    loadBtn.addEventListener('click', getData);
+  </script>
+</body>
+</html>

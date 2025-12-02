@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Game of Thrones Wiki</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .custom-navbar {
+            background: #0f1a2b;
+        }
+
+        .custom-navbar .nav-link {
+            color: #d1cfc9;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 0 1.5rem;
+        }
+
+        .custom-navbar .nav-link:hover {
+            color: #e6e6e6;
+        }
+
+        #header {
+            width: 100%;
+            height: 240px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #header>a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 24px;
+        }
+
+        #main {
+            width: 100%;
+            height: 900px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .invisbleSideDiv {
+            width: 15%;
+            height: 100%;
+            background-color: #52677d;
+        }
+
+        #centerDiv {
+            width: 70%;
+            height: 100%;
+            background-color: #bdc4d4;
+        }
+
+        #centerDiv>div {
+            width: 100%;
+            height: 100%;
+            background-color: #bdc4d4;
+            border-width: 6px;
+            border-color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .charcontainer {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            max-width: 1200px;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .charleft {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 400px;
+        }
+
+        .charname {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .charimg {
+            width: 350px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .spoilerbuttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar custom-navbar">
+        <div class="container-fluid">
+            <ul class="navbar-nav flex-row mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="gameofthrones.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Characters.html">Characters</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Houses.html">Houses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Books.html">Books</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="main">
+        <div class="invisbleSideDiv"></div>
+        <div id="centerDiv">
+            <div class="charcontainer">
+                <div class="charleft">
+                    <div class="charheader">
+                        <h1 class="charname">House Targaryen</h1>
+                    </div>
+                    <img src="Images/House_Targaryen.jpg" alt="Project" class="charimg">
+                </div>
+                <div class="charbuttons">
+                    <button id="loadBtn">Info</button>
+                    <pre id="output"></pre>
+                </div>
+            </div>
+        </div>
+        <div class="invisbleSideDiv"></div>
+    </div>
+
+    <script>
+        const API_URL = 'https://www.anapioficeandfire.com/api/houses/378';
+        const output = document.getElementById('output');
+        const loadBtn = document.getElementById('loadBtn');
+
+        async function getData() {
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'GET',
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                const important = {
+                    name: data.name,
+                    region: data.region,
+                    coatOfArms: data.coatOfArms,
+                    words: data.words,
+                    founded: data.founded,
+                    titles: data.titles
+                };
+                output.textContent = JSON.stringify(important, null, 2);
+            } catch (error) {
+                output.textContent = 'Error: ' + error.message;
+            }
+        }
+
+        loadBtn.addEventListener('click', getData);
+    </script>
+
+
+    <section id="home"></section>
+    <section id="characters"></section>
+    <section id="houses"></section>
+    <section id="books"></section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
